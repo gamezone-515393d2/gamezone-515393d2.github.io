@@ -1,0 +1,1791 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>老司机漫画-都市情感_悬疑短剧_睡前通勤</title>
+  <meta name="description" content="老司机漫画提供都市情感、悬疑短剧等漫画内容的分类推荐与追更指南，适合喜欢睡前或通勤时阅读的漫画爱好者。">
+  <meta name="keywords" content="都市情感漫画,悬疑短剧,睡前漫画,通勤追更,漫画分类">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f6e6c'/%3E%3Cpath d='M20 28h24v6H20zM20 38h18v6H20z' fill='%23f5d88e'/%3E%3Ccircle cx='42' cy='20' r='6' fill='%23e9b23e'/%3E%3C/svg%3E">
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+  <style>
+    /* ----- 全局变量与重置 ----- */
+    :root {
+      --brand: #1f6e6c;
+      --brand-dark: #0f4a48;
+      --brand-light: #e2f0ee;
+      --accent: #e9b23e;
+      --accent-soft: #fbeecb;
+      --text: #1e2a2a;
+      --text-light: #4b5e5e;
+      --text-muted: #6f8383;
+      --bg: #f8faf9;
+      --panel: #ffffff;
+      --border: #d7e2e0;
+      --shadow: 0 6px 18px rgba(18, 55, 54, 0.06);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --announce-height: 38px;
+      --header-height: 64px;
+      --font-base: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+      --max-width: 1360px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--announce-height) + var(--header-height) + 12px);
+    }
+
+    body {
+      font-family: var(--font-base);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+      padding-top: calc(var(--announce-height) + var(--header-height));
+    }
+
+    /* ----- 吸顶公告条 + 页头 ----- */
+    .sticky-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .announce-bar {
+      background: var(--brand-dark);
+      color: #f0f9f8;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      padding: 0 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .announce-bar strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .site-header {
+      background: var(--panel);
+      height: var(--header-height);
+      box-shadow: 0 2px 12px rgba(0, 40, 38, 0.06);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+
+    .brand svg {
+      width: 36px;
+      height: 36px;
+      display: block;
+    }
+
+    .brand-text {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--brand-dark);
+      white-space: nowrap;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .header-nav a:hover {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 4px 4px 4px 16px;
+      transition: border 0.15s;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(31, 110, 108, 0.12);
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      font-size: 14px;
+      width: 160px;
+      outline: none;
+      color: var(--text);
+      font-family: inherit;
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-box button {
+      background: var(--brand);
+      border: none;
+      color: #fff;
+      font-size: 13px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .search-box button:hover {
+      background: var(--brand-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    /* ----- 首屏 ----- */
+    .hero-section {
+      background: linear-gradient(135deg, #f0f7f6 0%, #ffffff 70%);
+      border-bottom: 1px solid var(--border);
+      padding: 42px 24px 36px;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 380px;
+    }
+
+    .hero-text h1 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--brand-dark);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .hero-tags span {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--brand-dark);
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 26px;
+      border-radius: 30px;
+      transition: 0.15s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--brand-dark);
+      border: 1.5px solid var(--brand);
+    }
+
+    .btn-secondary:hover {
+      background: var(--brand-light);
+    }
+
+    .hero-visual {
+      flex: 0 1 340px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      filter: drop-shadow(0 8px 20px rgba(18, 55, 54, 0.08));
+    }
+
+    /* ----- 三栏主内容区 ----- */
+    .page-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 250px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 左栏 */
+    .left-sidebar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .channel-nav {
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 18px 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .channel-nav h2, .tag-index h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+
+    .channel-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .channel-nav li a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 14px;
+      transition: background 0.12s, color 0.12s;
+    }
+
+    .channel-nav li a:hover {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+    }
+
+    .tag-index {
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 18px 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-list a {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 16px;
+      text-decoration: none;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+      white-space: nowrap;
+    }
+
+    .tag-list a:hover {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      border-color: var(--brand);
+    }
+
+    /* 中栏 */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      min-width: 0;
+    }
+
+    .content-section {
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--brand-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title small {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    /* 简介文字 */
+    .intro-text p {
+      margin-bottom: 14px;
+      color: var(--text-light);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .intro-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .card-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-item:hover {
+      border-color: var(--brand);
+      box-shadow: 0 4px 12px rgba(31, 110, 108, 0.08);
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--brand-dark);
+      line-height: 1.4;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .card-tags span {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: var(--text-muted);
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .compact-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+
+    .compact-list li:last-child {
+      border-bottom: none;
+    }
+
+    .compact-list .item-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .compact-list .item-summary {
+      color: var(--text-muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      display: block;
+      text-decoration: none;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 10px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brand-dark);
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .category-item:hover {
+      background: var(--brand-light);
+      border-color: var(--brand);
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin: 22px 0 10px;
+    }
+
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      color: var(--text-light);
+      margin-bottom: 12px;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .deep-dive ul {
+      margin: 8px 0 16px 20px;
+      color: var(--text-light);
+    }
+
+    .deep-dive li {
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      list-style: none;
+      counter-reset: step;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .guide-steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .guide-steps li::before {
+      content: counter(step);
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .guide-steps strong {
+      color: var(--text);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--brand-dark);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.12s;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "＋";
+      font-size: 16px;
+      color: var(--brand);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary {
+      background: var(--brand-light);
+    }
+
+    details[open] summary::after {
+      content: "－";
+    }
+
+    .faq-answer {
+      padding: 0 16px 14px;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .comment-item {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .comment-item strong {
+      display: block;
+      color: var(--brand-dark);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .news-item {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .news-item .news-title {
+      font-weight: 600;
+      color: var(--brand-dark);
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .news-item .news-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .news-item .news-summary {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* 相关推荐标签 */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .related-tags a {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      font-size: 13px;
+      padding: 5px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+
+    .related-tags a:hover {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      border-color: var(--brand);
+    }
+
+    /* 趋势观察 / 时间线 */
+    .timeline {
+      list-style: none;
+      border-left: 3px solid var(--brand-light);
+      padding-left: 20px;
+      margin-left: 6px;
+    }
+
+    .timeline li {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -27px;
+      top: 5px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--brand);
+      border: 2px solid var(--panel);
+      box-shadow: 0 0 0 2px var(--brand-light);
+    }
+
+    .timeline .tl-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .timeline .tl-title {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .timeline .tl-desc {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* 右栏 */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .sidebar-card {
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .sidebar-card h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .toc-list a {
+      display: block;
+      padding: 6px 8px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 13px;
+      transition: background 0.12s, color 0.12s;
+    }
+
+    .toc-list a:hover {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+    }
+
+    .hot-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hot-list li {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .hot-list li span:first-child {
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .hot-list li a {
+      text-decoration: none;
+      color: var(--text-light);
+    }
+
+    .hot-list li a:hover {
+      color: var(--brand-dark);
+      text-decoration: underline;
+    }
+
+    .extra-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .extra-links a {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 14px;
+      text-decoration: none;
+    }
+
+    .extra-links a:hover {
+      background: var(--brand-light);
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: var(--brand-dark);
+      color: #d7e8e6;
+      padding: 40px 24px 20px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-brand .brand-text {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #b8d4d1;
+      max-width: 280px;
+    }
+
+    .footer-col h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-col a {
+      color: #b8d4d1;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 28px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 12px;
+      color: #9bb9b5;
+      text-align: center;
+    }
+
+    /* 搜索无结果反馈 */
+    .search-feedback {
+      display: none;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #7a5a0e;
+      margin-top: 12px;
+    }
+
+    .search-feedback.active {
+      display: block;
+    }
+
+    /* 隐藏筛选 */
+    .filtered-out {
+      display: none !important;
+    }
+
+    /* ----- 响应式 ----- */
+    @media (max-width: 1024px) {
+      .page-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .left-sidebar, .right-sidebar {
+        position: static;
+      }
+
+      .left-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .right-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      :root {
+        --announce-height: 34px;
+        --header-height: 56px;
+      }
+
+      body {
+        font-size: 14px;
+      }
+
+      .header-nav {
+        display: none;
+        position: absolute;
+        top: calc(var(--header-height) - 4px);
+        left: 0;
+        width: 100%;
+        background: var(--panel);
+        flex-direction: column;
+        padding: 12px 16px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        border-radius: 0 0 var(--radius) var(--radius);
+        gap: 2px;
+      }
+
+      .header-nav.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .search-box input {
+        width: 100px;
+      }
+
+      .search-box button {
+        padding: 5px 12px;
+        font-size: 12px;
+      }
+
+      .hero-text h1 {
+        font-size: 26px;
+      }
+
+      .hero-inner {
+        gap: 24px;
+      }
+
+      .hero-visual {
+        flex-basis: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+      }
+
+      .left-sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .right-sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comment-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .content-section {
+        padding: 20px 16px;
+      }
+
+      .compact-list li {
+        flex-direction: column;
+        gap: 2px;
+        align-items: flex-start;
+      }
+
+      .compact-list .item-summary {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .brand-text {
+        font-size: 18px;
+      }
+
+      .search-box input {
+        width: 72px;
+      }
+
+      .hero-text h1 {
+        font-size: 22px;
+      }
+    }
+
+    /* 可见焦点 */
+    a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 吸顶公告条 + 页头 -->
+  <div class="sticky-wrapper">
+    <div class="announce-bar">
+      <span>📢 本周上新 <strong>「都市情感」</strong> 专题 · 悬疑短剧连载中 · 睡前通勤精选更新</span>
+    </div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/#hero" class="brand" aria-label="老司机漫画首页">
+          <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
+            <rect width="64" height="64" rx="12" fill="#1f6e6c"/>
+            <path d="M20 28h24v6H20zM20 38h18v6H20z" fill="#f5d88e"/>
+            <circle cx="42" cy="20" r="6" fill="#e9b23e"/>
+          </svg>
+          <span class="brand-text">老司机漫画</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="展开导航菜单" aria-expanded="false" id="menuToggle">☰</button>
+
+        <nav class="header-nav" id="headerNav" aria-label="主题导航">
+          <a href="/#intro">内容简介</a>
+          <a href="/#hot-picks">热门推荐</a>
+          <a href="/#latest-updates">最新更新</a>
+          <a href="/#categories">分类入口</a>
+          <a href="/#deep-dive">深度解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#comments">用户评论</a>
+          <a href="/#related-news">相关资讯</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="search-box">
+            <input type="search" id="searchInput" placeholder="搜索漫画标题或标签…" aria-label="搜索漫画内容">
+            <button type="button" id="searchBtn">搜索</button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero-section" id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>老司机漫画</h1>
+        <p class="hero-desc">都市情感、悬疑短剧、睡前通勤精选，一个为漫画爱好者整理类型、看点与追更节奏的推荐门户。每天更新可读条目，按分类和标签快速找到你想看的方向。</p>
+        <div class="hero-tags">
+          <span>都市情感</span>
+          <span>悬疑短剧</span>
+          <span>睡前看</span>
+          <span>通勤追</span>
+        </div>
+        <div class="hero-cta">
+          <a href="/#hot-picks" class="btn-primary">浏览热门内容</a>
+          <a href="/#categories" class="btn-secondary">按分类查找</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 340 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="30" width="300" height="180" rx="18" fill="#e2f0ee"/>
+          <rect x="40" y="52" width="120" height="16" rx="8" fill="#1f6e6c" opacity="0.85"/>
+          <rect x="40" y="80" width="200" height="10" rx="5" fill="#b8d4d1"/>
+          <rect x="40" y="98" width="160" height="10" rx="5" fill="#b8d4d1"/>
+          <rect x="40" y="126" width="90" height="28" rx="14" fill="#e9b23e"/>
+          <rect x="140" y="126" width="90" height="28" rx="14" fill="#1f6e6c" opacity="0.25"/>
+          <circle cx="270" cy="66" r="22" fill="#e9b23e" opacity="0.7"/>
+          <rect x="230" y="120" width="70" height="60" rx="10" fill="#fff" stroke="#1f6e6c" stroke-width="2"/>
+          <path d="M245 140h40M245 152h30M245 164h35" stroke="#1f6e6c" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏主内容区 -->
+  <div class="page-container">
+
+    <!-- 左栏 -->
+    <aside class="left-sidebar" aria-label="频道导航与标签索引">
+      <div class="channel-nav">
+        <h2>频道导航</h2>
+        <ul>
+          <li><a href="/#intro">内容简介</a></li>
+          <li><a href="/#hot-picks">热门内容推荐</a></li>
+          <li><a href="/#latest-updates">最新更新</a></li>
+          <li><a href="/#categories">分类入口</a></li>
+          <li><a href="/#deep-dive">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#related-news">相关资讯</a></li>
+          <li><a href="/#related-tags">相关推荐</a></li>
+          <li><a href="/#trends">趋势观察</a></li>
+        </ul>
+      </div>
+      <div class="tag-index">
+        <h2>热门标签</h2>
+        <div class="tag-list">
+          <a href="/#hot-picks" data-filter="都市情感">都市情感</a>
+          <a href="/#hot-picks" data-filter="悬疑短剧">悬疑短剧</a>
+          <a href="/#hot-picks" data-filter="睡前看">睡前看</a>
+          <a href="/#hot-picks" data-filter="通勤追">通勤追</a>
+          <a href="/#hot-picks" data-filter="完结">完结</a>
+          <a href="/#hot-picks" data-filter="连载中">连载中</a>
+          <a href="/#hot-picks" data-filter="高甜">高甜</a>
+          <a href="/#hot-picks" data-filter="反转">反转</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 中栏 -->
+    <main class="main-content" id="mainContent">
+
+      <!-- 1. 内容简介 -->
+      <section class="content-section" id="intro">
+        <h2 class="section-title">内容简介</h2>
+        <div class="intro-text">
+          <p>老司机漫画是一个面向漫画爱好者的内容推荐与分类门户，重点关注都市情感、悬疑短剧、轻喜剧等适合碎片时间阅读的漫画类型。无论你习惯睡前看几话放松，还是通勤路上追更连载，都可以在这里按类型和标签找到方向。</p>
+          <p>页面围绕“看什么、适合什么时候看、更新节奏怎样”三个实际问题组织内容。热门推荐卡片展示具体作品名称、类型标签和简短看点；最新更新列表提示近期值得关注的条目；分类入口则把都市情感、悬疑短剧、高甜日常、反转剧情等方向直接呈现在导航中，方便按兴趣筛选。</p>
+          <p>对于喜欢比较不同作品风格的用户，深度解析部分会从叙事节奏、情感线推进和悬念设置等角度展开，帮助判断一部作品是否适合睡前阅读或通勤追更。如果你关心某部作品是否完结、一般多久更新一次，FAQ 和最新更新板块会给出参考信息。</p>
+          <p>所有推荐内容以示例数据呈现，用于展示页面结构和内容组织方式。整体设计优先保证手机阅读体验，正文段落短、信息密度适中，标签和分类入口可以快速定位到你关心的方向。</p>
+        </div>
+      </section>
+
+      <!-- 2. 热门内容推荐 -->
+      <section class="content-section" id="hot-picks">
+        <h2 class="section-title">热门内容推荐 <small>示例热度</small></h2>
+        <div class="card-grid">
+          <div class="card-item" data-tags="都市情感 睡前看 连载中">
+            <div class="card-title">《晚风便利店》</div>
+            <div class="card-tags"><span>都市情感</span><span>睡前看</span><span>连载中</span></div>
+            <div class="card-desc">深夜便利店店长与常客之间的温柔相遇，适合睡前放松阅读的都市情感小品。</div>
+            <div class="card-meta"><span>热度 9.2</span><span>更新至 48 话</span></div>
+          </div>
+          <div class="card-item" data-tags="悬疑短剧 反转 通勤追">
+            <div class="card-title">《第七码头》</div>
+            <div class="card-tags"><span>悬疑短剧</span><span>反转</span><span>通勤追</span></div>
+            <div class="card-desc">每周三更新的悬疑短剧，每话一个线索，适合通勤路上快速追更。</div>
+            <div class="card-meta"><span>热度 8.9</span><span>更新至 32 话</span></div>
+          </div>
+          <div class="card-item" data-tags="都市情感 高甜 完结">
+            <div class="card-title">《合租室友的猫》</div>
+            <div class="card-tags"><span>都市情感</span><span>高甜</span><span>完结</span></div>
+            <div class="card-desc">已完结的高甜都市情感短篇，适合一口气看完的轻松故事。</div>
+            <div class="card-meta"><span>评分 9.0</span><span>全 24 话</span></div>
+          </div>
+          <div class="card-item" data-tags="悬疑短剧 睡前看 反转">
+            <div class="card-title">《雾中来信》</div>
+            <div class="card-tags"><span>悬疑短剧</span><span>睡前看</span><span>反转</span></div>
+            <div class="card-desc">一封来历不明的信牵出旧案，节奏紧凑，适合喜欢悬念的读者睡前阅读。</div>
+            <div class="card-meta"><span>热度 8.7</span><span>更新至 21 话</span></div>
+          </div>
+          <div class="card-item" data-tags="都市情感 通勤追 连载中">
+            <div class="card-title">《地铁终点站》</div>
+            <div class="card-tags"><span>都市情感</span><span>通勤追</span><span>连载中</span></div>
+            <div class="card-desc">以地铁通勤为背景的都市情感连载，每话一个小故事，适合碎片时间阅读。</div>
+            <div class="card-meta"><span>热度 8.5</span><span>更新至 56 话</span></div>
+          </div>
+          <div class="card-item" data-tags="悬疑短剧 完结 反转">
+            <div class="card-title">《无声证人》</div>
+            <div class="card-tags"><span>悬疑短剧</span><span>完结</span><span>反转</span></div>
+            <div class="card-desc">已完结的悬疑短剧，围绕一桩旧案展开，结局反转值得通勤时追完。</div>
+            <div class="card-meta"><span>评分 9.3</span><span>全 18 话</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section class="content-section" id="latest-updates">
+        <h2 class="section-title">最新更新 <small>近期条目</small></h2>
+        <ul class="compact-list">
+          <li><span class="item-name">《晚风便利店》</span><span class="item-summary">更新第 48 话 · 店长与常客的过去逐渐揭晓</span></li>
+          <li><span class="item-name">《第七码头》</span><span class="item-summary">更新第 32 话 · 新线索指向码头旧仓库</span></li>
+          <li><span class="item-name">《雾中来信》</span><span class="item-summary">更新第 21 话 · 信件笔迹鉴定出现意外结果</span></li>
+          <li><span class="item-name">《地铁终点站》</span><span class="item-summary">更新第 56 话 · 终点站附近的新角色登场</span></li>
+          <li><span class="item-name">《合租室友的猫》</span><span class="item-summary">完结纪念 · 全 24 话已可完整阅读</span></li>
+          <li><span class="item-name">《无声证人》</span><span class="item-summary">番外篇更新 · 补充主线后的日常片段</span></li>
+          <li><span class="item-name">《午夜电台》</span><span class="item-summary">新连载第 6 话 · 都市情感与悬疑元素交织</span></li>
+          <li><span class="item-name">《便利店夜班》</span><span class="item-summary">更新第 14 话 · 适合睡前看的短篇故事</span></li>
+        </ul>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="content-section" id="categories">
+        <h2 class="section-title">分类入口</h2>
+        <div class="category-grid">
+          <a href="/#hot-picks" class="category-item" data-filter="都市情感">都市情感</a>
+          <a href="/#hot-picks" class="category-item" data-filter="悬疑短剧">悬疑短剧</a>
+          <a href="/#hot-picks" class="category-item" data-filter="高甜">高甜日常</a>
+          <a href="/#hot-picks" class="category-item" data-filter="反转">反转剧情</a>
+          <a href="/#hot-picks" class="category-item" data-filter="睡前看">睡前看</a>
+          <a href="/#hot-picks" class="category-item" data-filter="通勤追">通勤追</a>
+          <a href="/#hot-picks" class="category-item" data-filter="完结">已完结</a>
+          <a href="/#hot-picks" class="category-item" data-filter="连载中">连载中</a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section class="content-section deep-dive" id="deep-dive">
+        <h2 class="section-title">深度解析：都市情感与悬疑短剧的阅读节奏</h2>
+        <p>在漫画分类中，都市情感和悬疑短剧是两种阅读节奏差异很大的类型。了解它们的更新规律和叙事特点，能帮助你更高效地安排睡前或通勤时的阅读时间。</p>
+
+        <h3>都市情感漫画的常见结构</h3>
+        <p>都市情感类作品通常以人物关系推进为主线，单话篇幅较短，适合碎片时间阅读。常见的结构包括：</p>
+        <ul>
+          <li><strong>日常单元型：</strong>每话围绕一个生活场景展开，如便利店夜班、合租日常，适合睡前轻松看。</li>
+          <li><strong>关系递进型：</strong>主线明确，人物关系逐话发展，适合通勤时按顺序追更。</li>
+          <li><strong>群像交织型：</strong>多个角色视角交替，适合喜欢比较不同人物线的读者。</li>
+        </ul>
+        <p>如果你习惯睡前看几话放松，可以优先选择日常单元型作品；如果喜欢连续追更，关系递进型会更合适。老司机漫画在推荐卡片中标注了“睡前看”或“通勤追”标签，方便按场景筛选。</p>
+
+        <h3>悬疑短剧的悬念设置与更新节奏</h3>
+        <p>悬疑短剧通常以每话一个线索或反转的方式推进，阅读时需要注意前后话之间的细节关联。比较常见的更新节奏是每周固定更新一到两话，适合通勤路上分段阅读。</p>
+        <p>判断一部悬疑短剧是否适合自己，可以从三个角度入手：</p>
+        <ul>
+          <li><strong>线索密度：</strong>每话给出的信息量是否适中，太密不适合碎片时间，太疏容易失去兴趣。</li>
+          <li><strong>反转频率：</strong>高反转作品适合喜欢刺激的读者，低反转作品更侧重氛围营造。</li>
+          <li><strong>完结状态：</strong>已完结作品可以一口气看完，连载中作品需要按更新节奏追更。</li>
+        </ul>
+        <p>在分类入口中，悬疑短剧与“反转”“完结”标签结合使用，可以快速缩小选择范围。例如，想找已经完结、可以通勤时连续阅读的悬疑作品，可以同时关注“悬疑短剧”和“完结”两个分类。</p>
+
+        <h3>如何根据阅读场景选择类型</h3>
+        <p>睡前阅读通常需要情绪平稳、单话完整度高的作品，都市情感中的日常单元型比较合适。通勤阅读则更适合有一定悬念、每话结尾留有钩子的连载作品，悬疑短剧和关系递进型都市情感都能满足。如果你对更新节奏比较敏感，可以优先查看最新更新列表中的进度提示。</p>
+        <p>老司机漫画在内容组织上把类型标签和场景标签并列展示，方便同时按照“都市情感”“睡前看”或“悬疑短剧”“通勤追”进行组合筛选。深度解析部分也会持续补充不同作品的结构特点，帮助读者建立自己的选择标准。</p>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="content-section" id="guide">
+        <h2 class="section-title">体验指南</h2>
+        <ol class="guide-steps">
+          <li><strong>按分类浏览：</strong>在分类入口选择“都市情感”“悬疑短剧”等方向，页面会定位到对应的推荐内容。</li>
+          <li><strong>使用标签筛选：</strong>左栏热门标签和分类按钮支持按“睡前看”“通勤追”“完结”等条件筛选热门推荐卡片。</li>
+          <li><strong>查看最新更新：</strong>最新更新列表展示近期更新的作品名称和一句话摘要，方便判断追更进度。</li>
+          <li><strong>移动端阅读：</strong>手机宽度下导航收起为菜单按钮，侧栏内容移至主内容之后，正文无需横向滚动。</li>
+          <li><strong>搜索查找：</strong>页头搜索框支持按作品名称或标签查找页面内可见内容，无结果时会给出提示。</li>
+        </ol>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="content-section" id="faq">
+        <h2 class="section-title">常见问答</h2>
+        <div class="faq-list">
+          <details>
+            <summary>老司机漫画主要收录哪些类型的漫画？</summary>
+            <div class="faq-answer">主要围绕都市情感、悬疑短剧、高甜日常和反转剧情等适合碎片时间阅读的类型，页面按分类和标签组织内容，方便按方向查找。</div>
+          </details>
+          <details>
+            <summary>都市情感类漫画适合什么人看？</summary>
+            <div class="faq-answer">适合喜欢人物关系推进、日常场景和情绪细腻表达的读者。睡前放松或通勤时阅读都比较合适，具体可根据“睡前看”“通勤追”标签选择。</div>
+          </details>
+          <details>
+            <summary>悬疑短剧一般多久更新一次？</summary>
+            <div class="faq-answer">示例作品中多数悬疑短剧按每周一到两话的节奏更新，具体进度可以查看最新更新列表中的更新话数。</div>
+          </details>
+          <details>
+            <summary>怎么判断一部漫画是否适合睡前看？</summary>
+            <div class="faq-answer">可以优先选择标注“睡前看”标签、单话故事完整度较高、情绪线较平稳的作品。都市情感中的日常单元型通常比高反转悬疑更适合睡前阅读。</div>
+          </details>
+          <details>
+            <summary>已完结的悬疑短剧和连载中的作品怎么选？</summary>
+            <div class="faq-answer">如果希望一口气读完，可以筛选“完结”标签；如果喜欢跟随更新节奏讨论线索，可以选择“连载中”作品，并在最新更新列表关注进度。</div>
+          </details>
+          <details>
+            <summary>通勤时间比较短，适合看哪类漫画？</summary>
+            <div class="faq-answer">单话篇幅较短、每话有明确看点的作品比较合适，例如标注“通勤追”的都市情感连载或悬疑短剧。热门推荐卡片中的作品简介可以帮助快速判断。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="content-section" id="comments">
+        <h2 class="section-title">用户评论</h2>
+        <div class="comment-list">
+          <div class="comment-item"><strong>夜航星</strong>《晚风便利店》很适合睡前看，节奏舒服。</div>
+          <div class="comment-item"><strong>地铁读书人</strong>通勤追《第七码头》刚好，每话不长。</div>
+          <div class="comment-item"><strong>橘子汽水</strong>高甜日常类最近看《合租室友的猫》，已完结不用等。</div>
+          <div class="comment-item"><strong>雾都旅人</strong>悬疑短剧还是喜欢完结的，不用追更。</div>
+          <div class="comment-item"><strong>睡前十分钟</strong>标签筛选挺方便，直接找睡前看。</div>
+          <div class="comment-item"><strong>南巷旧梦</strong>《地铁终点站》更新稳定，通勤看刚刚好。</div>
+          <div class="comment-item"><strong>无声雨</strong>反转剧情看多了有点累，偶尔换都市情感调剂。</div>
+          <div class="comment-item"><strong>咖啡不加糖</strong>希望多一些完结短篇，通勤看完不用等。</div>
+          <div class="comment-item"><strong>午夜电台迷</strong>《雾中来信》悬念设置不错，适合晚上看。</div>
+          <div class="comment-item"><strong>站台守望者</strong>分类里“通勤追”这个标签很实用。</div>
+          <div class="comment-item"><strong>小岛来信</strong>最新更新列表能直接看到进度，省事。</div>
+          <div class="comment-item"><strong>七号仓库</strong>悬疑短剧和都市情感搭配看，节奏刚好。</div>
+          <div class="comment-item"><strong>微风正好</strong>高甜日常适合放松，睡前看没压力。</div>
+          <div class="comment-item"><strong>旧书摊</strong>希望搜索能按标签直接找，现在也可以。</div>
+          <div class="comment-item"><strong>巷口路灯</strong>完结作品推荐多些更好，不喜欢追更。</div>
+          <div class="comment-item"><strong>雨天限定</strong>《无声证人》结局反转确实没想到。</div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="content-section" id="related-news">
+        <h2 class="section-title">相关资讯</h2>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-title">都市情感短篇连载热度上升，睡前阅读场景受关注</div>
+            <div class="news-date">2025-03-12</div>
+            <div class="news-summary">近期多部都市情感短篇以单话完整故事为主，适合睡前碎片时间阅读，分类标签中“睡前看”使用频率增加。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">悬疑短剧更新节奏观察：周更与双周更并存</div>
+            <div class="news-date">2025-03-08</div>
+            <div class="news-summary">悬疑短剧的更新频率差异较大，部分作品保持每周一话，也有作品采用双周更，追更时需留意最新更新列表。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">完结漫画推荐需求增加，通勤读者偏好一次看完</div>
+            <div class="news-date">2025-02-28</div>
+            <div class="news-summary">越来越多通勤读者倾向选择已完结作品，避免等待更新。分类中的“完结”标签可帮助快速筛选。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">反转剧情类作品讨论度走高，叙事结构成关注点</div>
+            <div class="news-date">2025-02-20</div>
+            <div class="news-summary">反转剧情类悬疑短剧的讨论集中在叙事结构和线索埋设，深度解析板块从节奏和线索密度角度给出阅读建议。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">通勤阅读场景细化，短篇单元型漫画受青睐</div>
+            <div class="news-date">2025-02-14</div>
+            <div class="news-summary">单话篇幅短、故事完整的漫画更适合通勤途中阅读，都市情感和轻悬疑类型中此类结构较为常见。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">漫画分类标签使用习惯：类型与场景组合搜索增多</div>
+            <div class="news-date">2025-02-05</div>
+            <div class="news-summary">读者越来越多同时使用类型标签和场景标签，如“悬疑短剧+通勤追”“都市情感+睡前看”，组合筛选提高查找效率。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="content-section" id="related-tags">
+        <h2 class="section-title">相关推荐</h2>
+        <div class="related-tags">
+          <a href="/#hot-picks" data-filter="都市情感">都市情感漫画推荐</a>
+          <a href="/#hot-picks" data-filter="悬疑短剧">悬疑短剧完结推荐</a>
+          <a href="/#hot-picks" data-filter="睡前看">睡前看的高甜日常</a>
+          <a href="/#hot-picks" data-filter="通勤追">通勤追更连载中</a>
+          <a href="/#hot-picks" data-filter="反转">反转剧情悬疑短剧</a>
+          <a href="/#hot-picks" data-filter="完结">已完结短篇漫画</a>
+          <a href="/#hot-picks" data-filter="高甜">高甜都市情感合集</a>
+        </div>
+      </section>
+
+      <!-- 11. 趋势观察 / 时间线 -->
+      <section class="content-section" id="trends">
+        <h2 class="section-title">趋势观察</h2>
+        <ul class="timeline">
+          <li>
+            <div class="tl-date">2025-03-12</div>
+            <div class="tl-title">睡前阅读场景标签使用上升</div>
+            <div class="tl-desc">都市情感短篇中标注“睡前看”的作品点击和讨论量增加，单话完整故事更受睡前读者欢迎。</div>
+          </li>
+          <li>
+            <div class="tl-date">2025-03-08</div>
+            <div class="tl-title">悬疑短剧周更节奏趋于稳定</div>
+            <div class="tl-desc">多数示例悬疑短剧保持每周一话更新，读者对更新时间的预期更加明确，追更计划更容易安排。</div>
+          </li>
+          <li>
+            <div class="tl-date">2025-02-28</div>
+            <div class="tl-title">完结作品需求持续增长</div>
+            <div class="tl-desc">通勤读者更倾向选择已完结作品，避免等待更新，分类中“完结”标签的使用频率明显提高。</div>
+          </li>
+          <li>
+            <div class="tl-date">2025-02-20</div>
+            <div class="tl-title">反转结构成为悬疑讨论热点</div>
+            <div class="tl-desc">读者对悬疑短剧的反转设计和线索合理性关注度上升，深度解析板块相应增加叙事结构分析。</div>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- 右栏 -->
+    <aside class="right-sidebar" aria-label="辅助阅读入口">
+      <div class="sidebar-card">
+        <h2>页内目录</h2>
+        <ul class="toc-list">
+          <li><a href="/#intro">内容简介</a></li>
+          <li><a href="/#hot-picks">热门内容推荐</a></li>
+          <li><a href="/#latest-updates">最新更新</a></li>
+          <li><a href="/#categories">分类入口</a></li>
+          <li><a href="/#deep-dive">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#related-news">相关资讯</a></li>
+          <li><a href="/#related-tags">相关推荐</a></li>
+          <li><a href="/#trends">趋势观察</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h2>热门条目</h2>
+        <ul class="hot-list">
+          <li><span>1</span><a href="/#hot-picks">《晚风便利店》都市情感 · 睡前看</a></li>
+          <li><span>2</span><a href="/#hot-picks">《第七码头》悬疑短剧 · 通勤追</a></li>
+          <li><span>3</span><a href="/#hot-picks">《合租室友的猫》高甜 · 完结</a></li>
+          <li><span>4</span><a href="/#hot-picks">《雾中来信》悬疑短剧 · 反转</a></li>
+          <li><span>5</span><a href="/#hot-picks">《地铁终点站》都市情感 · 连载中</a></li>
+          <li><span>6</span><a href="/#hot-picks">《无声证人》悬疑短剧 · 完结</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h2>延伸阅读</h2>
+        <div class="extra-links">
+          <a href="/#deep-dive">都市情感叙事结构</a>
+          <a href="/#deep-dive">悬疑短剧更新节奏</a>
+          <a href="/#faq">睡前看怎么选</a>
+          <a href="/#faq">通勤追更指南</a>
+          <a href="/#trends">近期类型趋势</a>
+          <a href="/#guide">标签筛选技巧</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-text">老司机漫画</span>
+        <p>都市情感、悬疑短剧与睡前通勤精选，按类型和场景整理可读漫画内容，帮助你在碎片时间找到想看的方向。</p>
+      </div>
+      <div class="footer-col">
+        <h3>内容频道</h3>
+        <ul>
+          <li><a href="/#hot-picks">热门内容推荐</a></li>
+          <li><a href="/#latest-updates">最新更新</a></li>
+          <li><a href="/#categories">分类入口</a></li>
+          <li><a href="/#deep-dive">深度解析</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>阅读辅助</h3>
+        <ul>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#related-news">相关资讯</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>推荐方向</h3>
+        <ul>
+          <li><a href="/#hot-picks">都市情感漫画</a></li>
+          <li><a href="/#hot-picks">悬疑短剧</a></li>
+          <li><a href="/#hot-picks">睡前看</a></li>
+          <li><a href="/#hot-picks">通勤追</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      部分内容为示例数据，仅用于展示页面结构 · © 2025 老司机漫画
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // 菜单切换
+      const menuToggle = document.getElementById('menuToggle');
+      const headerNav = document.getElementById('headerNav');
+      if (menuToggle && headerNav) {
+        menuToggle.addEventListener('click', function() {
+          const isOpen = headerNav.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+      }
+
+      // 搜索功能
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const mainContent = document.getElementById('mainContent');
+
+      // 创建无结果反馈元素
+      const feedback = document.createElement('div');
+      feedback.className = 'search-feedback';
+      feedback.textContent = '未找到匹配的内容，请尝试其他标题或标签。';
+      const introSection = document.getElementById('intro');
+      if (introSection) {
+        introSection.after(feedback);
+      }
+
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        const cards = document.querySelectorAll('.card-item');
+        const lists = document.querySelectorAll('.compact-list li');
+        const newsItems = document.querySelectorAll('.news-item');
+        const commentItems = document.querySelectorAll('.comment-item');
+        const relatedTags = document.querySelectorAll('.related-tags a');
+        const categoryItems = document.querySelectorAll('.category-item');
+        const tagLinks = document.querySelectorAll('.tag-list a');
+
+        // 先重置所有
+        [cards, lists, newsItems, commentItems, relatedTags, categoryItems, tagLinks].forEach(group => {
+          group.forEach(el => el.classList.remove('filtered-out'));
+        });
+        feedback.classList.remove('active');
+
+        if (!query) {
+          return;
+        }
+
+        let anyVisible = false;
+
+        // 卡片：匹配标题、描述、标签
+        cards.forEach(card => {
+          const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+          const desc = card.querySelector('.card-desc')?.textContent.toLowerCase() || '';
+          const tags = Array.from(card.querySelectorAll('.card-tags span')).map(s => s.textContent.toLowerCase()).join(' ');
+          if (title.includes(query) || desc.includes(query) || tags.includes(query)) {
+            card.classList.remove('filtered-out');
+            anyVisible = true;
+          } else {
+            card.classList.add('filtered-out');
+          }
+        });
+
+        // 最新更新列表
+        lists.forEach(li => {
+          const text = li.textContent.toLowerCase();
+          if (text.includes(query)) {
+            li.classList.remove('filtered-out');
+            anyVisible = true;
+          } else {
+            li.classList.add('filtered-out');
+          }
+        });
+
+        // 资讯
+        newsItems.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.classList.remove('filtered-out');
+            anyVisible = true;
+          } else {
+            item.classList.add('filtered-out');
+          }
+        });
+
+        // 评论
+        commentItems.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.classList.remove('filtered-out');
+            anyVisible = true;
+          } else {
+            item.classList.add('filtered-out');
+          }
+        });
+
+        // 相关推荐标签
+        relatedTags.forEach(tag => {
+          const text = tag.textContent.toLowerCase();
+          if (text.includes(query)) {
+            tag.classList.remove('filtered-out');
+            anyVisible = true;
+          } else {
+            tag.classList.add('filtered-out');
+          }
+        });
+
+        // 分类入口、标签索引
+        [...categoryItems, ...tagLinks].forEach(el => {
+          const text = el.textContent.toLowerCase();
+          if (text.includes(query)) {
+            el.classList.remove('filtered-out');
+            anyVisible = true;
+          } else {
+            el.classList.add('filtered-out');
+          }
+        });
+
+        if (!anyVisible) {
+          feedback.classList.add('active');
+        }
+      }
+
+      if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+      }
+
+      // 分类/标签筛选（data-filter）
+      function filterByTag(tag) {
+        const cards = document.querySelectorAll('.card-item');
+        let anyVisible = false;
+        cards.forEach(card => {
+          const tags = card.getAttribute('data-tags') || '';
+          if (tags.includes(tag) || tag === '') {
+            card.classList.remove('filtered-out');
+            anyVisible = true;
+          } else {
+            card.classList.add('filtered-out');
+          }
+        });
+        // 滚动到热门推荐
+        const hotSection = document.getElementById('hot-picks');
+        if (hotSection) {
+          hotSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        // 搜索框清空
+        if (searchInput) searchInput.value = '';
+        feedback.classList.remove('active');
+      }
+
+      // 绑定分类和标签的筛选点击
+      document.querySelectorAll('[data-filter]').forEach(el => {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          const tag = this.getAttribute('data-filter');
+          filterByTag(tag);
+        });
+      });
+
+      // 点击页内锚点不进行额外处理，浏览器默认滚动
+      // 关闭移动菜单点击链接后
+      document.querySelectorAll('.header-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+          if (headerNav) headerNav.classList.remove('open');
+          if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+    })();
+  </script>
+</body>
+  </html>
